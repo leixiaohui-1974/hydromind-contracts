@@ -1,0 +1,22 @@
+[project]
+name = "hydromind-contracts"
+version = "0.1.0"
+description = "Interface contracts for HydroMind water network intelligence platform"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = []  # ZERO dependencies!
+readme = "README.md"
+
+[project.optional-dependencies]
+test = ["pytest>=7.0", "pytest-asyncio>=0.21"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["hydromind_contracts*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
