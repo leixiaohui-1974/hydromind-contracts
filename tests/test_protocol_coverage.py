@@ -285,6 +285,7 @@ class TestProtocolCoverage:
             "OptimizationProtocol",
             "DispatchProtocol",
             "MessageBusProtocol",
+            "ChannelConfigProtocol",
         }
 
         impls = _discover_implementations(proto)
