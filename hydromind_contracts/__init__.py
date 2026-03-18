@@ -21,6 +21,15 @@ from hydromind_contracts.agent import AgentProtocol, AgentMessageProtocol
 from hydromind_contracts.skill import SkillProtocol
 from hydromind_contracts.mcp_tool import MCPToolProtocol
 from hydromind_contracts.digital_twin import DigitalTwinProtocol
+from hydromind_contracts.scada import ScadaProtocol
+from hydromind_contracts.hydraulic_solver import (
+    ChannelConfigProtocol,
+    HydraulicSolverProtocol,
+)
+from hydromind_contracts.water_quality import WaterQualityProtocol
+from hydromind_contracts.optimization import OptimizationProtocol
+from hydromind_contracts.dispatch import DispatchProtocol
+from hydromind_contracts.message_bus import MessageBusProtocol
 
 # --- Registries ----------------------------------------------------------
 from hydromind_contracts.engine_registry import discover_engines, get_engine
@@ -46,6 +55,13 @@ __all__ = [
     "SkillProtocol",
     "MCPToolProtocol",
     "DigitalTwinProtocol",
+    "ScadaProtocol",
+    "HydraulicSolverProtocol",
+    "ChannelConfigProtocol",
+    "WaterQualityProtocol",
+    "OptimizationProtocol",
+    "DispatchProtocol",
+    "MessageBusProtocol",
     # Registries
     "discover_engines",
     "get_engine",
