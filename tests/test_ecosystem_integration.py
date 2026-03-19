@@ -25,6 +25,13 @@ PROJECTS = {
     "HydroLab": Path("D:/research/HydroLab"),
 }
 
+HAS_FULL_WORKSPACE = all(path.exists() for path in PROJECTS.values())
+
+pytestmark = pytest.mark.skipif(
+    not HAS_FULL_WORKSPACE,
+    reason="Cross-project integration tests require a full HydroMind workspace checkout.",
+)
+
 for name, path in PROJECTS.items():
     if path.exists() and str(path) not in sys.path:
         sys.path.insert(0, str(path))
