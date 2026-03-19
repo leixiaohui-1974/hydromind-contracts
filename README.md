@@ -15,6 +15,21 @@ pip install -e ".[test]"
 pytest
 ```
 
+For reproducible CI and local test environments:
+
+```bash
+pip install -r requirements-test.txt
+pip install -e .
+pytest
+```
+
+To refresh the lockfile after changing test dependencies:
+
+```bash
+python -m pip install pip-tools
+pip-compile requirements-test.in --output-file requirements-test.txt
+```
+
 ## Usage
 
 ```python
