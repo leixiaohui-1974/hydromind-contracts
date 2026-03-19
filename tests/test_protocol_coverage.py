@@ -56,7 +56,7 @@ def _discover_protocols() -> dict[str, type]:
                 attr_name.endswith("Protocol")
                 and issubclass(attr, Protocol)
                 and attr is not Protocol
-                and getattr(attr, "__protocol_attrs__", None) is not None
+                and getattr(attr, "_is_protocol", False)
             ):
                 protocols[attr_name] = attr
 
