@@ -1,5 +1,7 @@
 """Tests for engine and role registries."""
 
+from types import SimpleNamespace
+
 import pytest
 
 from hydromind_contracts.engine_registry import discover_engines, get_engine
@@ -35,3 +37,29 @@ def test_get_engine_env_override(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("HYDROMIND_ENGINE", "phantom_engine")
     with pytest.raises(KeyError, match="phantom_engine"):
         get_engine("other")
+
+
+def test_discover_role_modules_success_path(monkeypatch: pytest.MonkeyPatch) -> None:
+    class FakeRole:
+        pass
+
+    fake_entry_point = SimpleNamespace(name="operator", load=lambda: FakeRole)
+    monkeypatch.setattr(
+        "hydromind_contracts.role_registry.entry_points",
+        lambda: SimpleNamespace(select=lambda group: [fake_entry_point] if group == "hydromind.roles" else []),
+    )
+    result = discover_role_modules()
+    assert "operator" in result
+    assert result["operator"].load() is FakeRole
+
+
+def test_get_role_module_success_path(monkeypatch: pytest.MonkeyPatch) -> None:
+    class FakeRole:
+        pass
+
+    fake_entry_point = SimpleNamespace(name="designer", load=lambda: FakeRole)
+    monkeypatch.setattr(
+        "hydromind_contracts.role_registry.entry_points",
+        lambda: SimpleNamespace(select=lambda group: [fake_entry_point] if group == "hydromind.roles" else []),
+    )
+    assert get_role_module("designer") is FakeRole

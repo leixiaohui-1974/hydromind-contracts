@@ -7,27 +7,19 @@ or mock that satisfies it.
 
 import importlib
 import inspect
-import sys
 from pathlib import Path
 from typing import Protocol, runtime_checkable
 
 import pytest
 
+from tests.workspace_helper import add_existing_projects_to_syspath, project_paths
+
 # ---------------------------------------------------------------------------
 # Project paths
 # ---------------------------------------------------------------------------
 
-PROJECTS = {
-    "HydroGuard": Path("D:/research/HydroGuard"),
-    "HydroDesign": Path("D:/research/HydroDesign"),
-    "HydroArena": Path("D:/research/HydroArena"),
-    "HydroEdu": Path("D:/research/HydroEdu"),
-    "HydroLab": Path("D:/research/HydroLab"),
-}
-
-for name, path in PROJECTS.items():
-    if path.exists() and str(path) not in sys.path:
-        sys.path.insert(0, str(path))
+PROJECTS = project_paths()
+add_existing_projects_to_syspath(PROJECTS)
 
 # ---------------------------------------------------------------------------
 # Discover all Protocol classes in hydromind_contracts

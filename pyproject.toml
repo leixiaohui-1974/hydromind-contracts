@@ -2,7 +2,7 @@
 name = "hydromind-contracts"
 version = "0.1.0"
 description = "Interface contracts for HydroMind water network intelligence platform"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 dependencies = []  # ZERO dependencies!
 readme = "README.md"
