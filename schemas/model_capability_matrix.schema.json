@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModelCapabilityMatrix",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "matrix_id", "model_id", "workflow_capabilities", "skill_capabilities", "risk_notes", "quality_tier"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "ModelCapabilityMatrix" },
+    "matrix_id": { "type": "string", "minLength": 1 },
+    "model_id": { "type": "string", "minLength": 1 },
+    "workflow_capabilities": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "skill_capabilities": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "risk_notes": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "quality_tier": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

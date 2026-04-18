@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HourlyScheduleResult",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "case_id", "schedule_id", "status", "horizon_hours", "objective_ref", "time_window_ref", "boundary_condition_ref", "timeline"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "HourlyScheduleResult" },
+    "case_id": { "type": "string" },
+    "schedule_id": { "type": "string" },
+    "status": { "type": "string" },
+    "horizon_hours": { "type": "integer" },
+    "objective_ref": { "type": "string" },
+    "time_window_ref": { "type": "string" },
+    "boundary_condition_ref": { "type": "string" },
+    "timeline": { "type": "array" }
+  }
+}

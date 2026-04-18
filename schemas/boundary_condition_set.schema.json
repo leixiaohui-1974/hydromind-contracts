@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BoundaryConditionSet",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "case_id", "condition_set_id", "horizon_hours", "boundary_conditions"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "BoundaryConditionSet" },
+    "case_id": { "type": "string" },
+    "condition_set_id": { "type": "string" },
+    "horizon_hours": { "type": "integer" },
+    "boundary_conditions": { "type": "array" }
+  }
+}

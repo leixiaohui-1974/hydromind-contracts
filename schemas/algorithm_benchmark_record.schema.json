@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AlgorithmBenchmarkRecord",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "benchmark_record_id", "case_id", "workflow_name", "algorithm_surface_id", "provider_id", "adapter_type", "runtime_class", "lane_id", "fallback_policy_id", "artifact_refs", "status", "benchmark_dimensions", "recorded_at"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "AlgorithmBenchmarkRecord" },
+    "benchmark_record_id": { "type": "string", "minLength": 1 },
+    "case_id": { "type": "string", "minLength": 1 },
+    "workflow_name": { "type": "string", "minLength": 1 },
+    "algorithm_surface_id": { "type": "string", "minLength": 1 },
+    "provider_id": { "type": "string", "minLength": 1 },
+    "adapter_type": { "type": "string", "minLength": 1 },
+    "runtime_class": { "type": "string", "minLength": 1 },
+    "lane_id": { "type": "string", "minLength": 1 },
+    "fallback_policy_id": { "type": "string", "minLength": 1 },
+    "artifact_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "status": { "type": "string", "minLength": 1 },
+    "benchmark_dimensions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "recorded_at": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

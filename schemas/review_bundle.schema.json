@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReviewBundle",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "case_id", "review_id", "status"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "ReviewBundle" },
+    "case_id": { "type": "string" },
+    "review_id": { "type": "string" },
+    "status": { "type": "string" },
+    "summary": { "type": "string" }
+  }
+}

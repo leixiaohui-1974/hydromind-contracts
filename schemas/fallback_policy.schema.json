@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FallbackPolicy",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "fallback_policy_id", "display_name", "supported_workflows", "supported_canonical_workflow_keys", "primary_lane_id", "fallback_lane_ids", "degrade_mode", "retry_budget", "terminal_conditions"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "FallbackPolicy" },
+    "fallback_policy_id": { "type": "string", "minLength": 1 },
+    "display_name": { "type": "string", "minLength": 1 },
+    "supported_workflows": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "supported_canonical_workflow_keys": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "primary_lane_id": { "type": "string", "minLength": 1 },
+    "fallback_lane_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "degrade_mode": { "type": "string", "minLength": 1 },
+    "retry_budget": { "type": "integer", "minimum": 0 },
+    "terminal_conditions": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": true
+}

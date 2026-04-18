@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "McpInvocationPolicy",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "policy_id", "mcp_group", "capability_server_ids", "gateway_route_ids", "supported_tasks", "parameter_templates", "invocation_sequence", "retry_policy", "fallback_policy", "trace_requirements"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "McpInvocationPolicy" },
+    "policy_id": { "type": "string", "minLength": 1 },
+    "mcp_group": { "type": "string", "minLength": 1 },
+    "capability_server_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "gateway_route_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "supported_tasks": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "parameter_templates": { "type": "object", "minProperties": 1, "additionalProperties": { "type": "string" } },
+    "invocation_sequence": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "retry_policy": { "type": "string", "minLength": 1 },
+    "fallback_policy": { "type": "string", "minLength": 1 },
+    "trace_requirements": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": true
+}

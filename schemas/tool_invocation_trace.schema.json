@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ToolInvocationTrace",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "trace_id", "case_id", "route_id", "server_id", "tool_name", "status", "recorded_at"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "ToolInvocationTrace" },
+    "trace_id": { "type": "string", "minLength": 1 },
+    "case_id": { "type": "string", "minLength": 1 },
+    "route_id": { "type": "string", "minLength": 1 },
+    "server_id": { "type": "string", "minLength": 1 },
+    "tool_name": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "minLength": 1 },
+    "recorded_at": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

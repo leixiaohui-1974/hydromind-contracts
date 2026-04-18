@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TimeWindowConstraint",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "case_id", "constraint_id", "horizon_hours", "allowed_periods"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "TimeWindowConstraint" },
+    "case_id": { "type": "string" },
+    "constraint_id": { "type": "string" },
+    "horizon_hours": { "type": "integer" },
+    "allowed_periods": { "type": "array" }
+  }
+}

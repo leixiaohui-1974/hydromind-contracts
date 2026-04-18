@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentNetwork",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "case_id", "network_id", "nodes", "edges"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "AgentNetwork" },
+    "case_id": { "type": "string", "minLength": 1 },
+    "network_id": { "type": "string", "minLength": 1 },
+    "nodes": { "type": "array", "items": { "type": "object" } },
+    "edges": { "type": "array", "items": { "type": "object" } }
+  },
+  "additionalProperties": true
+}

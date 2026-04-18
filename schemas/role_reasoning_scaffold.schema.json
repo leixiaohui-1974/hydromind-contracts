@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RoleReasoningScaffold",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "scaffold_id", "role_id", "lifecycle_stage_ids", "goal_types", "required_context_slots", "decision_steps", "required_evidence", "forbidden_shortcuts", "handoff_rules"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "RoleReasoningScaffold" },
+    "scaffold_id": { "type": "string", "minLength": 1 },
+    "role_id": { "type": "string", "minLength": 1 },
+    "lifecycle_stage_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "goal_types": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "required_context_slots": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "decision_steps": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "required_evidence": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "forbidden_shortcuts": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "handoff_rules": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": true
+}

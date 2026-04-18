@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CaseManifest",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "case_id", "display_name", "project_type"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "CaseManifest" },
+    "case_id": { "type": "string" },
+    "display_name": { "type": "string" },
+    "project_type": { "type": "string" },
+    "source_index_ref": { "type": "string" }
+  }
+}

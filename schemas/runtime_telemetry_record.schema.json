@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RuntimeTelemetryRecord",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "telemetry_id", "session_id", "case_id", "workflow_name", "canonical_workflow_key", "status", "selection_trace_id", "model_policy_id", "preferred_model_id", "route_ids", "server_ids", "lane_id", "fallback_policy_id", "distributed_task_receipt_id", "tool_trace_ids", "artifact_refs", "started_at", "finished_at"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "RuntimeTelemetryRecord" },
+    "telemetry_id": { "type": "string", "minLength": 1 },
+    "session_id": { "type": "string", "minLength": 1 },
+    "case_id": { "type": "string", "minLength": 1 },
+    "workflow_name": { "type": "string", "minLength": 1 },
+    "canonical_workflow_key": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "minLength": 1 },
+    "selection_trace_id": { "type": "string", "minLength": 1 },
+    "model_policy_id": { "type": "string", "minLength": 1 },
+    "preferred_model_id": { "type": "string", "minLength": 1 },
+    "route_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "server_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "lane_id": { "type": "string", "minLength": 1 },
+    "fallback_policy_id": { "type": "string", "minLength": 1 },
+    "distributed_task_receipt_id": { "type": "string", "minLength": 1 },
+    "tool_trace_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "artifact_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "started_at": { "type": "string", "minLength": 1 },
+    "finished_at": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

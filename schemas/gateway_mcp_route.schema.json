@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GatewayMcpRoute",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "route_id", "display_name", "gateway_kind", "entrypoint", "capability_server_ids", "supported_workflows", "supported_canonical_workflow_keys", "invocation_mode"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "GatewayMcpRoute" },
+    "route_id": { "type": "string", "minLength": 1 },
+    "display_name": { "type": "string", "minLength": 1 },
+    "gateway_kind": { "type": "string", "minLength": 1 },
+    "entrypoint": { "type": "string", "minLength": 1 },
+    "capability_server_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "supported_workflows": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "supported_canonical_workflow_keys": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "invocation_mode": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

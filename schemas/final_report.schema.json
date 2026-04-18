@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FinalReport",
+  "type": "object",
+  "required": ["meta", "case", "readiness", "review", "release", "quality", "recommendations"],
+  "properties": {
+    "meta": { "type": "object" },
+    "case": { "type": "object" },
+    "readiness": { "type": "object" },
+    "review": { "type": "object" },
+    "release": { "type": "object" },
+    "quality": { "type": "object" },
+    "evidence": { "type": "object" },
+    "recommendations": { "type": "array", "items": { "type": "string" } },
+    "role_views": { "type": "object" }
+  }
+}

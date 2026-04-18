@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TargetVolumeObjective",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "case_id", "objective_id", "objective_type", "target_volume_m3", "horizon_hours"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "TargetVolumeObjective" },
+    "case_id": { "type": "string" },
+    "objective_id": { "type": "string" },
+    "objective_type": { "type": "string" },
+    "target_volume_m3": { "type": "number" },
+    "horizon_hours": { "type": "integer" }
+  }
+}

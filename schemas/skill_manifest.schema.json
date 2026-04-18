@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SkillManifest",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "skill_id", "display_name", "category", "lifecycle_stage_ids", "workflow_keys", "canonical_workflow_keys", "entry_command"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "SkillManifest" },
+    "skill_id": { "type": "string", "minLength": 1 },
+    "display_name": { "type": "string", "minLength": 1 },
+    "category": { "type": "string", "minLength": 1 },
+    "lifecycle_stage_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "workflow_keys": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "canonical_workflow_keys": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "entry_command": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

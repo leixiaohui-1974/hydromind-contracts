@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LifecyclePhase",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "lifecycle_stage_id", "display_name", "mission", "outputs"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "LifecyclePhase" },
+    "lifecycle_stage_id": { "type": "string", "minLength": 1 },
+    "display_name": { "type": "string", "minLength": 1 },
+    "mission": { "type": "string", "minLength": 1 },
+    "outputs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "additionalProperties": true
+}

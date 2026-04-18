@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CapabilityMcpServer",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "server_id", "display_name", "server_kind", "transport", "tool_ids", "supported_task_types"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "CapabilityMcpServer" },
+    "server_id": { "type": "string", "minLength": 1 },
+    "display_name": { "type": "string", "minLength": 1 },
+    "server_kind": { "type": "string", "minLength": 1 },
+    "transport": { "type": "string", "minLength": 1 },
+    "tool_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "supported_task_types": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": true
+}

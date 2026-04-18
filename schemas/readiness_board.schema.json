@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReadinessBoard",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "cases"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "ReadinessBoard" },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["case_id", "status"],
+        "properties": {
+          "case_id": { "type": "string" },
+          "status": { "type": "string" }
+        }
+      }
+    }
+  }
+}

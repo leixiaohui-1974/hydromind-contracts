@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentNodeProfile",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "agent_node_profile_id", "display_name", "lifecycle_stage_id", "management_level_id", "role_profile_id", "scope_pattern"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "AgentNodeProfile" },
+    "agent_node_profile_id": { "type": "string", "minLength": 1 },
+    "display_name": { "type": "string", "minLength": 1 },
+    "lifecycle_stage_id": { "type": "string", "minLength": 1 },
+    "management_level_id": { "type": "string", "minLength": 1 },
+    "role_profile_id": { "type": "string", "minLength": 1 },
+    "scope_pattern": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

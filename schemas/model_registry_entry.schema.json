@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModelRegistryEntry",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "model_id", "provider_id", "display_name", "model_family", "deployment_modes", "capability_tags", "supported_workflows", "status"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "ModelRegistryEntry" },
+    "model_id": { "type": "string", "minLength": 1 },
+    "provider_id": { "type": "string", "minLength": 1 },
+    "display_name": { "type": "string", "minLength": 1 },
+    "model_family": { "type": "string", "minLength": 1 },
+    "deployment_modes": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "capability_tags": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "supported_workflows": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "status": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

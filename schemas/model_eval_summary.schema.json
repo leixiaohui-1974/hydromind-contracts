@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModelEvalSummary",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "eval_id", "model_id", "policy_id", "evaluation_scope", "pass_rate", "known_failure_modes", "recommended_for"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "ModelEvalSummary" },
+    "eval_id": { "type": "string", "minLength": 1 },
+    "model_id": { "type": "string", "minLength": 1 },
+    "policy_id": { "type": "string", "minLength": 1 },
+    "evaluation_scope": { "type": "string", "minLength": 1 },
+    "pass_rate": { "type": "number" },
+    "known_failure_modes": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "recommended_for": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReleaseManifest",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "case_id", "release_id", "status"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "ReleaseManifest" },
+    "case_id": { "type": "string" },
+    "release_id": { "type": "string" },
+    "status": { "type": "string" },
+    "summary": { "type": "string" }
+  }
+}

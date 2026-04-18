@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentSkillBinding",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "binding_id", "agent_profile_id", "skill_id", "activation_mode"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "AgentSkillBinding" },
+    "binding_id": { "type": "string", "minLength": 1 },
+    "agent_profile_id": { "type": "string", "minLength": 1 },
+    "skill_id": { "type": "string", "minLength": 1 },
+    "activation_mode": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

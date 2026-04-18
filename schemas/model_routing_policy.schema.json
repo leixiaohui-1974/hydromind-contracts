@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModelRoutingPolicy",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "policy_id", "role_ids", "lifecycle_stage_ids", "preferred_model_id", "fallback_model_ids", "selection_rules", "required_capability_tags"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "ModelRoutingPolicy" },
+    "policy_id": { "type": "string", "minLength": 1 },
+    "role_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "lifecycle_stage_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "preferred_model_id": { "type": "string", "minLength": 1 },
+    "fallback_model_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "selection_rules": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "required_capability_tags": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": true
+}

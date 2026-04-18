@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModelSelectionTrace",
+  "type": "object",
+  "required": ["schema_version", "contract_type", "selection_trace_id", "session_id", "case_id", "workflow_name", "canonical_workflow_key", "role_id", "lifecycle_stage_id", "policy_id", "preferred_model_id", "fallback_model_ids", "required_model_capability_tags", "eval_summary_ids", "status", "recorded_at"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "contract_type": { "const": "ModelSelectionTrace" },
+    "selection_trace_id": { "type": "string", "minLength": 1 },
+    "session_id": { "type": "string", "minLength": 1 },
+    "case_id": { "type": "string", "minLength": 1 },
+    "workflow_name": { "type": "string", "minLength": 1 },
+    "canonical_workflow_key": { "type": "string", "minLength": 1 },
+    "role_id": { "type": "string", "minLength": 1 },
+    "lifecycle_stage_id": { "type": "string", "minLength": 1 },
+    "policy_id": { "type": "string", "minLength": 1 },
+    "preferred_model_id": { "type": "string", "minLength": 1 },
+    "fallback_model_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "required_model_capability_tags": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "eval_summary_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "status": { "type": "string", "minLength": 1 },
+    "recorded_at": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

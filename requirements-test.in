@@ -1,4 +1,0 @@
-# Direct test dependencies mirrored from [project.optional-dependencies].test
-# in pyproject.toml. Re-lock requirements-test.txt when these change.
-pytest>=7.0
-pytest-asyncio>=0.21
