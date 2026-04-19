@@ -146,10 +146,10 @@ WATER_OBJECT_REPORT_CONVENTIONS: dict[str, WaterObjectReportConvention] = {
             "installed_flow_capacity",
             "pump_unit_count",
             "design_head",
-            "power_supply_mode",
-            "discharge_destination",
         ),
         optional_fields=(
+            "power_supply_mode",
+            "discharge_destination",
             "suction_source",
             "performance_curve_ref",
             "standby_units",
@@ -160,6 +160,7 @@ WATER_OBJECT_REPORT_CONVENTIONS: dict[str, WaterObjectReportConvention] = {
         compatibility_notes=(
             "Legacy pump templates can be upgraded by mapping pump_template to pump_station_object_template.",
             "Optional efficiency or performance curves may stay as evidence refs when raw data is external.",
+            "Power supply mode and discharge destination are optional until an authoritative structured equipment contract is attached.",
         ),
     ),
     "Gate": _build_convention(
@@ -195,9 +196,9 @@ WATER_OBJECT_REPORT_CONVENTIONS: dict[str, WaterObjectReportConvention] = {
             "length_m",
             "diameter_m",
             "design_pressure",
-            "material",
         ),
         optional_fields=(
+            "material",
             "wall_thickness_mm",
             "roughness",
             "burial_depth_m",
@@ -207,6 +208,7 @@ WATER_OBJECT_REPORT_CONVENTIONS: dict[str, WaterObjectReportConvention] = {
         aliases=("pipeline", "pipe", "conduit"),
         compatibility_notes=(
             "Legacy diameter values in millimeters should be normalized into diameter_m before publishing.",
+            "Pipeline material is optional until authoritative structured design-material contracts are attached.",
         ),
     ),
     "Watershed": _build_convention(
