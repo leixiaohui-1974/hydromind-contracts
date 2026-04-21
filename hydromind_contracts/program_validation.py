@@ -972,3 +972,32 @@ def validate_tier_message(payload: dict[str, Any]) -> dict[str, Any]:
     _require_non_empty_string(validated.get("event_type"), "TierMessage event_type")
     _require_non_empty_string(validated.get("recorded_at"), "TierMessage recorded_at")
     return validated
+
+
+def validate_execution_lane(payload: dict[str, Any]) -> dict[str, Any]:
+    validated = _validate_required_fields(payload, EXECUTION_LANE_REQUIRED_FIELDS, "ExecutionLane")
+    if validated.get("contract_type") != "ExecutionLane":
+        raise ValueError("ExecutionLane contract_type must equal 'ExecutionLane'")
+    _require_non_empty_string(validated.get("lane_id"), "ExecutionLane lane_id")
+    _require_string_list(validated.get("supported_canonical_workflow_keys"), "ExecutionLane supported_canonical_workflow_keys")
+    return validated
+
+
+def validate_fallback_policy(payload: dict[str, Any]) -> dict[str, Any]:
+    validated = _validate_required_fields(payload, FALLBACK_POLICY_REQUIRED_FIELDS, "FallbackPolicy")
+    if validated.get("contract_type") != "FallbackPolicy":
+        raise ValueError("FallbackPolicy contract_type must equal 'FallbackPolicy'")
+    _require_non_empty_string(validated.get("fallback_policy_id"), "FallbackPolicy fallback_policy_id")
+    _require_non_empty_string(validated.get("primary_lane_id"), "FallbackPolicy primary_lane_id")
+    _require_string_list(validated.get("supported_canonical_workflow_keys"), "FallbackPolicy supported_canonical_workflow_keys")
+    return validated
+
+
+def validate_team_run_state(payload: dict[str, Any]) -> dict[str, Any]:
+    validated = _validate_required_fields(payload, TEAM_RUN_STATE_REQUIRED_FIELDS, "TeamRunState")
+    if validated.get("contract_type") != "TeamRunState":
+        raise ValueError("TeamRunState contract_type must equal 'TeamRunState'")
+    _require_non_empty_string(validated.get("case_id"), "TeamRunState case_id")
+    _require_non_empty_string(validated.get("session_id"), "TeamRunState session_id")
+    _require_non_empty_string(validated.get("status"), "TeamRunState status")
+    return validated
